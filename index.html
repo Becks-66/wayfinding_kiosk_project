@@ -17,7 +17,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&amp;family=Archivo+Narrow:wght@600;700&amp;family=Inria+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
 <style>
-  html { -webkit-text-size-adjust: 100%; }
+  html {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
   body { margin: 0; background: rgb(249,250,251); -webkit-font-smoothing: antialiased; }
   a { color: rgb(17,24,39); }
   a:hover { color: rgb(241,136,30); }
@@ -587,14 +590,49 @@ class Component extends DCLogic {
   }
 
   componentDidMount() {
-    this._onZoom = () => {
+    this._onScale = () => {
       const tab = document.querySelector("[data-tab]");
       if (!tab) return;
+      const host = tab.parentElement;
+      if (!host) return;
       const w = window.innerWidth;
-      tab.style.zoom = w < 768 ? String(w / 768) : "";
+
+      // CSS zoom does not scale text and positioned geometry consistently in
+      // iOS WebKit. Scale the complete artboard as one rendered layer instead.
+      if (w < 768) {
+        const scale = w / 768;
+        const baseHeight = Number(tab.dataset.baseHeight) || tab.offsetHeight;
+        tab.dataset.baseHeight = String(baseHeight);
+
+        tab.style.zoom = "";
+        tab.style.position = "absolute";
+        tab.style.left = "0";
+        tab.style.top = "0";
+        tab.style.margin = "0";
+        tab.style.transformOrigin = "top left";
+        tab.style.transform = `scale(${scale})`;
+
+        host.style.position = "relative";
+        host.style.width = "100%";
+        host.style.height = `${baseHeight * scale}px`;
+        host.style.overflow = "hidden";
+      } else {
+        tab.style.zoom = "";
+        tab.style.position = "relative";
+        tab.style.left = "";
+        tab.style.top = "";
+        tab.style.margin = "0 auto";
+        tab.style.transform = "";
+        tab.style.transformOrigin = "";
+
+        host.style.position = "";
+        host.style.width = "";
+        host.style.height = "";
+        host.style.overflow = "";
+      }
     };
-    this._onZoom();
-    window.addEventListener("resize", this._onZoom);
+    this._onScale();
+    window.addEventListener("resize", this._onScale);
     this.setupConnectors();
     this.setupSteps();
     this.setupReveal();
@@ -646,7 +684,7 @@ class Component extends DCLogic {
 
   componentWillUnmount() {
     if (this._introTimer) clearTimeout(this._introTimer);
-    if (this._onZoom) window.removeEventListener("resize", this._onZoom);
+    if (this._onScale) window.removeEventListener("resize", this._onScale);
     if (this._placeConns) window.removeEventListener("resize", this._placeConns);
     if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
     if (this._io) this._io.disconnect();
