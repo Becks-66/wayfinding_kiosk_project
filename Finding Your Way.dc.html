@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Finding Your Way — A concept for smarter campus navigation</title>
+<meta name="description" content="Case study on wayfinding at the psychology faculty of the University of Padova (UNIPD): a kiosk concept for smarter campus navigation.">
+<meta property="og:title" content="Finding Your Way: A concept for smarter campus navigation">
+<meta property="og:description" content="Environmental psychology and wayfinding — application to Studio Wanner.">
+<link rel="icon" href="./assets/pin.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Young+Serif&amp;family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&amp;family=Archivo+Narrow:wght@600;700&amp;family=Inria+Sans:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+  html { -webkit-text-size-adjust: 100%; }
+  body { margin: 0; background: rgb(249,250,251); -webkit-font-smoothing: antialiased; }
+  a { color: rgb(17,24,39); }
+  a:hover { color: rgb(241,136,30); }
+  iframe { border: none; }
+
+  @keyframes om-bob { 0% { transform: translateY(0); } 50% { transform: translateY(-16px); } 100% { transform: translateY(0); } }
+  @keyframes om-bob-bulb { 0% { transform: translate(979.862px, 261px) rotate(5deg); } 50% { transform: translate(979.862px, 243px) rotate(5deg); } 100% { transform: translate(979.862px, 261px) rotate(5deg); } }
+  @keyframes om-bob-bulb-t { 0% { transform: translate(490.431px, 90px) rotate(5deg); } 50% { transform: translate(490.431px, 74px) rotate(5deg); } 100% { transform: translate(490.431px, 90px) rotate(5deg); } }
+  [data-tab] { display: none; }
+  [data-tabline-alt] { display: none; }
+  @media (max-width: 1199px) {
+    [data-desk] { display: none !important; }
+    [data-tab] { display: block !important; }
+  }
+  @media (max-width: 767px) {
+    [data-tabline-curve] { display: none !important; }
+    [data-tabline-alt] { display: block !important; }
+  }
+</style>
+</helmet>
+<div data-desk="1" style="position: relative; width: 1440px; margin: 0 auto; background: rgb(249,250,251); overflow: hidden;">
+
+  <div style="position: absolute; left: 0; top: -8px; width: 1440px; height: 10808px; background-image: repeating-linear-gradient(to bottom, rgba(44,27,14,0.1) 0px, rgba(44,27,14,0.1) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0) 65.75px); pointer-events: none;"></div>
+
+  <svg width="797" height="372" viewBox="0 0 797 372" fill="none" style="position: absolute; left: 347px; top: 666px; width: 797px; height: 372px; overflow: visible; pointer-events: none;">
+    <path data-intro-draw="1" d="M782.001 0.272766C920.006 212.273 0.502404 20.2728 0.50074 204.773C0.499076 389.273 0.50074 370.273 0.50074 370.273" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg width="903" height="460" viewBox="0 0 903 460" fill="none" style="position: absolute; left: 319.873px; top: 1608px; width: 903px; height: 460px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M1.73404 0.0826416C-44.2712 274.47 1213.63 -46.4174 828.618 459.583" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg width="749" height="280" viewBox="0 0 749 280" fill="none" style="position: absolute; left: 390px; top: 2505px; width: 749px; height: 280px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M742.055 0.10083C783.555 201.601 623.555 210.101 0.0549927 279.101" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg width="817" height="276" viewBox="0 0 817 276" fill="none" style="position: absolute; left: 320px; top: 4280px; width: 817px; height: 276px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M761.88 0.419434C1029.88 174.419 221.873 27.4194 0.372925 275.419" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg width="1" height="164" viewBox="0 0 1 164" fill="none" style="position: absolute; left: 719px; top: 5221px; width: 1px; height: 164px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0L0.500007 164" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg width="1" height="129" viewBox="0 0 1 129" fill="none" style="position: absolute; left: 719.5px; top: 7986px; width: 1px; height: 129px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V128.5" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg width="707" height="367" viewBox="0 0 707 367" fill="none" style="position: absolute; left: 165px; top: 9755px; width: 707px; height: 367px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M689.008 0.313477C848.018 198.313 -198.482 171.813 34.4995 366.313" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+
+  <section data-screen-label="01 Hero" style="position: relative; height: 900px; z-index: 1;">
+    <div data-intro="1" style="position: absolute; left: 80px; top: 80px; width: 1280px; height: 43px; box-sizing: border-box; border: 1px solid rgb(75,85,99); display: flex; flex-direction: row; padding: 8px 12px; justify-content: space-between; align-items: center;">
+      <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; letter-spacing: 4px; color: rgb(55,65,81); text-transform: uppercase; white-space: nowrap;">ENVIRONMENTAL PSYCHOLOGY - WAYFINDING</span>
+      <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; letter-spacing: 4px; color: rgb(55,65,81); text-transform: uppercase; white-space: nowrap;">Application to Studio Wanner</span>
+    </div>
+    <div data-intro="1" style="position: absolute; left: 80px; top: 287.5px; width: 800px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <h1 style="margin: 0; align-self: stretch; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 72px; text-align: center; line-height: 1.1; color: rgb(31,41,55); text-wrap: pretty;">Finding Your Way: <br>A concept for smarter campus navigation</h1>
+      <p style="margin: 0; width: 600px; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 28px; text-align: center; line-height: 1.25; color: rgb(55,65,81); text-wrap: pretty;">Case study inspired by the navigation problems inside the psychology faculty at the University of Padova (UNIPD).</p>
+    </div>
+    <img data-intro="1" src="./assets/pin.png" alt="" style="position: absolute; left: 1015px; top: 409px; width: 250px; height: 250px; object-fit: cover;">
+    <img data-intro="1" data-bob="1" src="./assets/pin-shadow.png" alt="Location pin" style="position: absolute; left: 971px; top: 251px; width: 300px; height: 300px; object-fit: cover;">
+  </section>
+
+  <section id="problem" data-screen-label="02 The problem" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 699px; top: 42px; width: 634px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start;">
+      <div style="width: 58px; height: 59px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 32px; line-height: 100%; color: rgb(249,246,240);">01</span>
+      </div>
+      <h2 style="margin: 0; align-self: stretch; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.1; color: rgb(17,24,39);">The problem</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">At the psychology faculty of UNIPD, navigation problems arise mainly from the architecture itself. The five buildings of the complex are nearly identical, their names are barely visible from the outside (small, easy-to-miss signs), and internal navigation is difficult because there is no visual differentiation between floors and no clear signage.
+
+Moreover, the disposition of some rooms, break mental models. You look for the library expecting a building, but it sits on the fifth floors of another one; the labs are scattered across a single building, some in the basement, some tucked next to professors' offices. Rooms for lessons, are scattered as well.
+
+New students, Erasmus students, and participants in experiments often get lost or arrive late.  Personally, I studied there and I got lost there, plenty of times.</div>
+    </div>
+    <figure data-reveal="1" style="position: absolute; left: 66px; top: 218px; width: 584px; height: 417px; margin: 0; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 232px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(1deg);"></div>
+      <img src="./assets/aerial-psico.png" alt="Aerial view of the UNIPD psychology faculty" style="height: 320px; align-self: stretch; border-radius: 4px; object-fit: cover;">
+      <figcaption style="display: flex; padding: 12px 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 1px; color: rgb(75,85,99); text-transform: uppercase;">UNIPD psychology faculty</figcaption>
+    </figure>
+  </section>
+
+  <section data-screen-label="03 My approach" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 153px; top: 93px; width: 721px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start;">
+      <div style="width: 58px; height: 59px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 32px; line-height: 100%; color: rgb(249,246,240);">02</span>
+      </div>
+      <h2 style="margin: 0; align-self: stretch; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.1; color: rgb(17,24,39);">My approach</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 24px; text-wrap: pretty;">
+        <p style="margin: 0;">A full signage overhaul would be needed, but that would mean new markings, a new colour logic across five occupied buildings, months of closures for students and professors.</p>
+        <div style="white-space: pre-line;">And even then, a perfect sign has a limit: it can only carry a handful of fixed destinations. But a department holds hundreds of rooms, labs, and offices.
+This is where <strong style="font-weight: 700;">a digital kiosk</strong> fits: you arrive at the complex, you search your destination, you get a path to follow.
+The already existing signs, even if few, can accompany you along the way.</div>
+        <p style="margin: 0;">The university already offers on its website an online virtual tour with 3D buildings for the faculty of psychology, so I decided to start researching from there before designing.</p>
+      </div>
+    </div>
+    <img data-bob="bulb" src="./assets/lightbulb.png" alt="" style="position: absolute; left: 0; top: 0; width: 400px; height: 400px; transform: translate(979.862px, 261px) rotate(5deg); transform-origin: 0 0; object-fit: cover;">
+  </section>
+
+  <section data-screen-label="04 What already exists" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 83px; top: 89px; width: 637px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start;">
+      <div style="width: 58px; height: 59px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 32px; line-height: 100%; color: rgb(249,246,240);">03</span>
+      </div>
+      <h2 style="margin: 0; align-self: stretch; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.1; color: rgb(17,24,39);">What already exists</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 22px; text-wrap: pretty;">
+        <p style="margin: 0;">The virtual tour presented some critical points:</p>
+        <div style="display: flex; flex-direction: column; gap: 22px; padding-left: 16px;">
+          <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">The tour begins from a position where no entrance actually exists,</strong> while the three real accesses to the complex aren't represented at all. The tour isn’t usable as a quick tool for orientation: you have to already know the place to make sense of it.</span></div>
+          <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">Clicking on a building catapults you onto a floor chosen by the site (usually the lowest floor),</strong> and only then can you decide where to go. If you're looking for a specific room and don't know where it is, you have to dig through nested menus and maps. There is no way to search for a destination directly.</span></div>
+        </div>
+      </div>
+    </div>
+    <figure data-reveal="1" style="position: absolute; left: 785px; top: 216px; width: 584px; height: 417px; margin: 0; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 232px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(1deg);"></div>
+      <img src="./assets/virtualtour-buildings.png" alt="UNIPD virtual tour, the five buildings" style="height: 320px; align-self: stretch; border-radius: 4px; object-fit: cover;">
+      <figcaption style="display: flex; padding: 12px 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 1px; color: rgb(75,85,99); text-transform: uppercase;">UNIPD virtual tour: the 5 buildings</figcaption>
+    </figure>
+    <a href="https://virtualtour.dpg.psy.unipd.it/" target="_blank" rel="noopener" style="position: absolute; left: 876px; top: 674px; width: 401px; font-family: 'Crimson Text', Georgia, serif; font-weight: 700; font-size: 20px; line-height: 100%; letter-spacing: 1px; color: rgb(17,24,39); text-decoration: underline; text-transform: uppercase;">https://virtualtour.dpg.psy.unipd.it/</a>
+  </section>
+
+  <section data-screen-label="05 What already exists, part 2" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 749px; top: 147px; width: 652px; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 22px; text-wrap: pretty;">
+      <div style="display: flex; flex-direction: column; gap: 22px; padding-left: 16px;">
+        <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">Once inside a floor, the situation is messy. The map shows a big block of colored boxes.</strong> The colors signal different department labs (animal psychology, psychophysiology, ...), but there is no clear legend, and the colors aren't unique: they're reused elsewhere in the overall map. A new visitor can’t easily decode it.</span></div>
+        <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">The floor view doesn't start from where you actually enter it (a door or the stairs), but from an arbitrarily chosen position.</strong> A small compass indicates north, which helps the few who navigate by cardinal directions, but a visitor who simply wants to know “where do I go from here?” gets no answer from a compass.</span></div>
+      </div>
+      <p style="margin: 0;">The tour gave me, in negative, the brief for the kiosk: everything that doesn’t work there, is what the new interface needs to do well.</p>
+    </div>
+    <figure data-reveal="1" style="position: absolute; left: 16px; top: 161px; width: 679px; height: 461px; margin: 0; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 280px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-1.5deg);"></div>
+      <img src="./assets/virtualtour-floor.png" alt="UNIPD virtual tour, Psico 1, floor -1" style="width: 604px; height: 361px; border-radius: 4px; object-fit: cover;">
+      <figcaption style="display: flex; padding: 12px 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 1px; color: rgb(75,85,99); text-transform: uppercase;">UNIPD virtual tour: psico 1, floor -1</figcaption>
+    </figure>
+  </section>
+
+  <section data-screen-label="06 My interface" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 43px; top: 103px; width: 766px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start;">
+      <div style="width: 58px; height: 59px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 32px; line-height: 100%; color: rgb(249,246,240);">04</span>
+      </div>
+      <h2 style="margin: 0; align-self: stretch; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.1; color: rgb(17,24,39);">My interface</h2>
+      <p style="margin: 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39);">The kiosk works in three steps, and each one answers a failure of the virtual tour.</p>
+    </div>
+    <div data-reveal="1" data-steps="x" style="position: absolute; left: 43px; top: 342px; width: 1354px; height: 341px; display: flex; flex-direction: row; gap: 32px; justify-content: center; align-items: center;">
+      <div data-step-card="1" style="width: 430px; box-sizing: border-box; border-radius: 12px; background: rgb(255,255,255); border: 4px solid rgb(156,163,175); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px;">
+        <div style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
+          <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; color: rgb(122,98,84);">1. ARRIVE</span>
+        </div>
+        <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.5; color: rgb(31,20,10); white-space: pre-line; text-wrap: pretty;">The screen shows a 2D bird's-eye view of the complex, with a “you are here” pin at the real entrance where the kiosk stands. A hint invites the visitor to search their destination.
+There will be one kiosk at each of the three possible entrances to the complex.</div>
+      </div>
+      <div data-step-card="2" style="width: 430px; box-sizing: border-box; border-radius: 12px; background: rgb(255,255,255); border: 4px solid rgb(156,163,175); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px;">
+        <div style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
+          <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; color: rgb(122,98,84);">2. SEARCH</span>
+        </div>
+        <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.5; color: rgb(31,20,10); text-wrap: pretty;">The visitor can search directly the room, lab, office or service that’s needed. There are no nested menus, and no need to already know where things are.</div>
+      </div>
+      <div data-step-card="3" style="width: 430px; box-sizing: border-box; border-radius: 12px; background: rgb(255,255,255); border: 4px solid rgb(156,163,175); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px;">
+        <div style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
+          <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; color: rgb(122,98,84);">3. ROUTE</span>
+        </div>
+        <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.5; color: rgb(31,20,10); white-space: pre-line; text-wrap: pretty;">The screen shows the route for the searched destination step by step. Since the buildings have multiple floors, the map is segmented: one screen shows how to reach the right building, one how to reach the stairs and one the final path to your destination.
+At the end, a QR code lets you take the path with you, downloading the a static maps on your phone.</div>
+      </div>
+    </div>
+    <div style="position: absolute; left: 477px; top: 522px; width: 25px; height: 2px; overflow: hidden; background: rgb(156,163,175);"><div data-step-fill="1" style="width: 100%; height: 100%; background: rgb(241,136,30); transform: scaleX(0); transform-origin: left center;"></div></div>
+    <div style="position: absolute; left: 938px; top: 522px; width: 25px; height: 2px; overflow: hidden; background: rgb(156,163,175);"><div data-step-fill="2" style="width: 100%; height: 100%; background: rgb(249,196,143); transform: scaleX(0); transform-origin: left center;"></div></div>
+  </section>
+
+  <section data-screen-label="07 Design choices" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 345px; top: 26px; width: 751px; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <div style="width: 349px; display: flex; flex-direction: column; gap: 32px; align-items: center;">
+        <div style="width: 58px; height: 59px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 32px; line-height: 100%; color: rgb(249,246,240);">05</span>
+        </div>
+        <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; text-align: center; line-height: 1.1; color: rgb(17,24,39);">Design choices</h2>
+      </div>
+      <div style="width: 751px; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+        <div style="width: 584px; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px; align-items: flex-start; position: relative;">
+          <div style="position: absolute; left: 232px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-1.5deg);"></div>
+          <h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 100%; color: rgb(31,20,10);">A segmented route</h3>
+          <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">One long path across five buildings and multiple floors is hard to hold in memory, but three short segments, each with one goal, are not.
+The segmentation also mirrors the logic of physical signage: first the building, the floor, then the room.</div>
+        </div>
+        <img src="./assets/segmented-route.png" alt="Three segmented route maps: complex, floor 0, floor -1" style="width: 751px; height: 350px; border-radius: 12px; object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="07 Design choices, colour" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 143px; top: 150px; width: 1155px; height: 600px; display: flex; flex-direction: row; gap: 108px; align-items: center;">
+      <img src="./assets/colors.png" alt="Colour palette: three shades for each of the five buildings" style="width: 463px; height: 600px; border-radius: 12px; object-fit: cover;">
+      <div style="width: 584px; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px; align-items: flex-start; position: relative;">
+        <div style="position: absolute; left: 232px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-1.5deg);"></div>
+        <h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 100%; color: rgb(31,20,10);">Color choice</h3>
+        <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">In the complex, buildings haven’t a single specific function: the library lives inside Psico2, offices and rooms for lessons are everywhere): for this reason, coloring by function wasn’t possible.
+For the kiosk, each of the five buildings has one stable color identity, so when you search a destination, the whole journey takes the color of the building in it.
+For each building, I selected three shades of the assigned color: a pastel shade for the resting state, a darker shade for the stroke of the building, and a vibrant one to highlight the path to follow and the room to reach.</div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="08 Why a 2D" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 120px; top: 60px; width: 1200px; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 540px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-0.5deg);"></div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 40px; line-height: 100%; color: rgb(31,20,10);">Why a 2D?</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">Maps can be represented both in 2D with a bird eye-view, or in 3D. Both approaches ask different things of the user: 3D offers a realistic first-person view, while 2D works through symbolic conventions people have practiced on a lifetime of city plans and Google Maps.
+Representing the space with a 3D map, would’ve been reasonable: research on mobile indoor navigation has found real advantages for 3D views followed in real time while walking (Burigat et al., 2017).
+
+However, my kiosk follows a different model: you consult it before moving, memorize your path, and the signage accompanies you inside multi-levels buildings. For this “look-then-go” interaction, the evidence favors 2D: in multi-level buildings, top-down maps produced more accurate cross-floor understanding and were preferred by most users (Li &amp; Giudice, 2013).
+Moreover, a kiosk is fixed: it is the "you are here" point. So, the main strength of 3D (matching the screen map to the surrounding) is already solved.
+
+Finally, a 2D map is simpler and cheaper to build and maintain, which for a university is not a detail.</div>
+    </div>
+    <div style="position: absolute; left: 113px; top: 671px; width: 1214px; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.35; color: rgb(0,0,0); display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; gap: 12px;"><span>•</span><span>Burigat, S., Chittaro, L., &amp; Sioni, R. (2017). Mobile three-dimensional maps for wayfinding in large and complex buildings: Empirical comparison of first-person versus third-person perspective.</span></div>
+      <div style="display: flex; gap: 12px;"><span>•</span><span>Li, H., &amp; Giudice, N. A. (2013, November). The effects of 2D and 3D maps on learning virtual multi-level indoor environments.</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="09 The prototype" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 125px; top: 49px; width: 1191px; display: flex; flex-direction: column; gap: 32px; align-items: center;">
+      <div style="width: 58px; height: 59px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 32px; line-height: 100%; color: rgb(249,246,240);">06</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; text-align: center; line-height: 1.1; color: rgb(17,24,39);">The prototype</h2>
+      <p style="margin: 0; width: 1191px; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); text-wrap: pretty;">Below, an interactive prototype of the kiosk, designed first in Figma, then built with Claude Design. The maps are redrawn from scratch, and kept deliberately minimal. For the scope of the prototype, only the route for Biblioteca Metelli, Laboratorio E08 and Aula T3 are available.</p>
+    </div>
+    <div style="position: absolute; left: 566px; top: 335px; width: 264px; aspect-ratio: 432 / 768; overflow: hidden; background: rgb(241,136,30);">
+      <iframe src="{{ prototypeSrc }}" title="Interactive kiosk prototype for Studio Wanner wayfinding" loading="lazy" scrolling="no" style="width: 432px; height: 768px; border: none; display: block; transform: scale(0.611111); transform-origin: top left;"></iframe>
+    </div>
+    <a href="{{ prototypeSrc }}" target="_blank" rel="noopener" style="position: absolute; left: -13px; top: 820px; width: 1440px; text-align: center; font-family: 'Archivo Narrow', sans-serif; font-weight: 400; font-size: 20px; line-height: 100%; color: rgb(17,24,39); text-decoration: underline; transition: color 0.2s ease" style-hover="color: rgb(241,136,30)">Apri il prototipo a schermo intero ↗</a>
+    <span style="position: absolute; left: 0; top: 872px; width: 1440px; text-align: center; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 100%; color: rgb(0,0,0);">The maps present in the prototype contains <a href="https://www.streamlinehq.com" target="_blank" rel="noopener" style="color: rgb(0,0,0); text-decoration: underline; transition: color 0.2s ease;" style-hover="color: rgb(241,136,30)">Free icons from Streamline</a></span>
+  </section>
+
+  <section data-screen-label="10 Limitations" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 141px; top: 143px; width: 1191px; display: flex; flex-direction: column; gap: 32px; align-items: flex-start;">
+      <div style="width: 58px; height: 59px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 32px; line-height: 100%; color: rgb(249,246,240);">07</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.1; color: rgb(17,24,39);">Limitations</h2>
+      <div style="width: 1191px; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 20px; text-wrap: pretty;">
+        <p style="margin: 0;">This is a speculative project built without client input or access to institutional resources.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-left: 16px;">
+          <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">Source material:</strong> no up-to-date floor plans were available. The maps were traced from two sources: the department's 3D virtual tour, viewed from above (which does not produce a true bird's-eye projection and is therefore slightly distorted), and emergency evacuation plans over five years old.</span></div>
+          <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">Scope and validation:</strong> the prototype covers four hard-coded routes. There is no routing engine or content backend, so the system's behaviour at full building scale remains untested. No usability testing was carried out, so the design decisions are only grounded in environmental psychology research and spatial reasoning.</span></div>
+          <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">Queuing issue:</strong> animated transitions and multi-step interactions slow down each session. During peak periods, like the start of semester or exam months, queuing is likely.</span></div>
+          <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">Accessibility:</strong> the current design is not optimised for blind and low-vision users.</span></div>
+          <div style="display: flex; gap: 14px;"><span>•</span><span><strong style="font-weight: 700;">Languages:</strong> only Italian and English are available at the moment. Adding further languages would require data on the actual composition of the international student population at the department, which was not available.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="11 Contacts" style="position: relative; height: 900px; z-index: 1;">
+    <h2 style="position: absolute; left: 624px; top: 95px; margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 48px; line-height: 1.1; color: rgb(17,24,39)">Contacts</h2>
+    
+    
+    <div data-reveal="1" style="position: absolute; left: 401px; top: 233px; width: 639px; display: flex; flex-direction: column; gap: 40px; align-items: center">
+      <div style="display: flex; flex-direction: row; gap: 80px; align-items: center; align-self: stretch;">
+        <div style="width: 279.5px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <img data-bob="1" src="./assets/telefon.png" alt="" style="height: 213px; align-self: stretch; object-fit: contain;">
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+            <span style="font-family: 'Inria Sans', sans-serif; font-weight: 700; font-size: 18px; text-align: center; line-height: 100%; color: rgb(0,0,0);">PHONE</span>
+            <a href="tel:+41782628980" style="font-family: 'Inria Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 100%; color: rgb(0,0,0); text-decoration: none; white-space: nowrap;">+41 78 262 89 80</a>
+          </div>
+        </div>
+        <div style="width: 279.5px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <img data-bob="1" src="./assets/email.png" alt="" style="height: 213px; align-self: stretch; object-fit: contain;">
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+            <span style="font-family: 'Inria Sans', sans-serif; font-weight: 700; font-size: 18px; text-align: center; line-height: 100%; color: rgb(0,0,0);">E-MAIL</span>
+            <a href="mailto:reb.guerrini@gmail.com" style="font-family: 'Inria Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 100%; color: rgb(0,0,0); text-decoration: none;">reb.guerrini@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div style="width: 279.5px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+        <img data-bob="1" src="./assets/portfolio.png" alt="" style="height: 213px; align-self: stretch; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; align-self: stretch;">
+          <span style="font-family: 'Inria Sans', sans-serif; font-weight: 700; font-size: 18px; text-align: center; line-height: 100%; color: rgb(0,0,0);">DESIGN PORTFOLIO</span>
+          <a href="https://becks-66.github.io/portfolio/" target="_blank" rel="noopener" style="font-family: 'Inria Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 100%; color: rgb(0,0,0); text-decoration: none; white-space: nowrap;">https://becks-66.github.io/portfolio/</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div data-tab="1" style="position: relative; width: 768px; height: 13800px; margin: 0 auto; background: rgb(249,250,251);">
+
+  <div style="position: absolute; left: 0; top: -8px; width: 768px; height: 13808px; background-image: repeating-linear-gradient(to bottom, rgba(44,27,14,0.1) 0px, rgba(44,27,14,0.1) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0) 84.73px); pointer-events: none;"></div>
+
+  <svg data-tabline-curve="1" width="301" height="473" viewBox="0 0 301 473" fill="none" style="position: absolute; left: 300px; top: 868px; width: 301px; height: 473px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M300.084 0.471802C12.0848 101.472 -86.9753 192.035 85.5839 472.472" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-tabline-alt="1" data-conn="185" data-conn-center="1200" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 1108px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="2400" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 2375px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="3300" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 3208px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="4500" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 4408px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="5700" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 5608px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="6900" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 6859px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="8100" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 8008px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="9300" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 9208px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="10500" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 10327px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="11700" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 11608px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+  <svg data-conn="185" data-conn-center="12600" preserveAspectRatio="none" width="1" height="185" viewBox="0 0 1 185" fill="none" style="position: absolute; left: 384px; top: 12556px; width: 1px; height: 185px; overflow: visible; pointer-events: none;">
+    <path data-draw="1" d="M0.5 0V185" stroke="rgb(17,24,39)" stroke-width="1"></path>
+  </svg>
+
+  <section data-screen-label="T01 Hero" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-intro="1" style="position: absolute; left: 30px; top: 92px; width: 707px; height: 70px; box-sizing: border-box; border: 1px solid rgb(75,85,99); display: flex; flex-direction: column; gap: 14px; padding: 8px 12px; justify-content: center; align-items: center;">
+      <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; letter-spacing: 4px; color: rgb(55,65,81); text-transform: uppercase;">Environmental psychology and wayfinding</span>
+      <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; letter-spacing: 4px; color: rgb(55,65,81); text-transform: uppercase;">Application to Studio Wanner</span>
+    </div>
+    <div data-intro="1" style="position: absolute; left: 43px; top: 391px; width: 388px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <h1 style="margin: 0; align-self: stretch; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 52px; text-align: center; line-height: 1.1; color: rgb(31,41,55); text-wrap: pretty;">Finding Your Way: <br>A concept for smarter campus navigation</h1>
+      <p style="margin: 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; text-align: center; line-height: 1.25; color: rgb(55,65,81); text-wrap: pretty;">Case study inspired by the navigation problems inside the psychology faculty at the University of Padova (UNIPD).</p>
+    </div>
+    <img data-intro="1" src="./assets/pin.png" alt="" style="position: absolute; left: 520px; top: 621px; width: 150px; height: 150px; object-fit: cover;">
+    <img data-intro="1" data-bob="1" src="./assets/pin-shadow.png" alt="Location pin" style="position: absolute; left: 460px; top: 470px; width: 250px; height: 250px; object-fit: cover;">
+  </section>
+
+  <section data-screen-label="T02 The problem" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 78px; top: 158px; width: 611px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <div style="width: 50px; height: 48px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; color: rgb(249,246,240);">01</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1; color: rgb(17,24,39);">The problem</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">At the psychology faculty of UNIPD, navigation problems arise mainly from the architecture itself. The five buildings of the complex are nearly identical, their names are barely visible from the outside (small, easy-to-miss signs), and internal navigation is difficult because there is no visual differentiation between floors and no clear signage.
+
+Moreover, the disposition of some rooms, break mental models. You look for the library expecting a building, but it sits on the fifth floors of another one; the labs are scattered across a single building, some in the basement, some tucked next to professors' offices. Rooms for lessons, are scattered as well.
+
+New students, Erasmus students, and participants in experiments often get lost or arrive late.  Personally, I studied there and I got lost there, plenty of times.</div>
+    </div>
+    <figure data-reveal="1" style="position: absolute; left: 100px; top: 705px; width: 567px; height: 405px; margin: 0; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 224px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(1deg);"></div>
+      <img src="./assets/aerial-psico.png" alt="Aerial view of the UNIPD psychology faculty" style="height: 308px; align-self: stretch; border-radius: 4px; object-fit: cover;">
+      <figcaption style="display: flex; padding: 12px 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 1px; color: rgb(75,85,99); text-transform: uppercase;">UNIPD psychology faculty</figcaption>
+    </figure>
+  </section>
+
+  <section data-screen-label="T03 My approach" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 95px; top: 241px; width: 577px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <div style="width: 50px; height: 48px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; color: rgb(249,246,240);">02</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1; color: rgb(17,24,39);">My approach</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 20px; text-wrap: pretty;">
+        <p style="margin: 0;">A full signage overhaul would be needed, but that would mean new markings, a new colour logic across five occupied buildings, months of closures for students and professors.</p>
+        <div style="white-space: pre-line;">And even then, a perfect sign has a limit: it can only carry a handful of fixed destinations. But a department holds hundreds of rooms, labs, and offices.
+This is where <strong style="font-weight: 700;">a digital kiosk</strong> fits: you arrive at the complex, you search your destination, you get a path to follow.
+The already existing signs, even if few, can accompany you along the way.</div>
+        <p style="margin: 0;">The university already offers on its website an online virtual tour with 3D buildings for the faculty of psychology, so I decided to start researching from there before designing.</p>
+      </div>
+    </div>
+    <img data-bob="bulb-t" src="./assets/lightbulb.png" alt="" style="position: absolute; left: 0; top: 0; width: 200px; height: 200px; transform: translate(490.431px, 90px) rotate(5deg); transform-origin: 0 0; object-fit: cover;">
+  </section>
+
+  <section data-screen-label="T04 What already exists" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 66px; top: 123px; width: 637px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <div style="width: 50px; height: 48px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; color: rgb(249,246,240);">03</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1; color: rgb(17,24,39);">What already exists</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 18px; text-wrap: pretty;">
+        <p style="margin: 0;">The virtual tour presented some critical points:</p>
+        <div style="display: flex; flex-direction: column; gap: 18px; padding-left: 12px;">
+          <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">The tour begins from a position where no entrance actually exists,</strong> while the three real accesses to the complex aren't represented at all. The tour isn’t usable as a quick tool for orientation: you have to already know the place to make sense of it.</span></div>
+          <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">Clicking on a building catapults you onto a floor chosen by the site (usually the lowest floor),</strong> and only then can you decide where to go. If you're looking for a specific room and don't know where it is, you have to dig through nested menus and maps. There is no way to search for a destination directly.</span></div>
+        </div>
+      </div>
+    </div>
+    <figure data-reveal="1" style="position: absolute; left: 94px; top: 628px; width: 581px; height: 415px; margin: 0; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 231px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(1deg);"></div>
+      <img src="./assets/virtualtour-buildings.png" alt="UNIPD virtual tour, the five buildings" style="height: 318px; align-self: stretch; border-radius: 4px; object-fit: cover;">
+      <figcaption style="display: flex; padding: 12px 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 1px; color: rgb(75,85,99); text-transform: uppercase;">UNIPD virtual tour: the 5 buildings</figcaption>
+    </figure>
+    <a href="https://virtualtour.dpg.psy.unipd.it/" target="_blank" rel="noopener" style="position: absolute; left: 183px; top: 1076px; width: 401px; font-family: 'Crimson Text', Georgia, serif; font-weight: 700; font-size: 20px; line-height: 100%; letter-spacing: 1px; color: rgb(17,24,39); text-decoration: underline; text-transform: uppercase;">https://virtualtour.dpg.psy.unipd.it/</a>
+  </section>
+
+  <section data-screen-label="T05 What already exists, part 2" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 103px; top: 171px; width: 562px; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 18px; text-wrap: pretty;">
+      <div style="display: flex; flex-direction: column; gap: 18px; padding-left: 12px;">
+        <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">Once inside a floor, the situation is messy. The map shows a big block of colored boxes.</strong> The colors signal different department labs (animal psychology, psychophysiology, ...), but there is no clear legend, and the colors aren't unique: they're reused elsewhere in the overall map. A new visitor can’t easily decode it.</span></div>
+        <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">The floor view doesn't start from where you actually enter it (a door or the stairs), but from an arbitrarily chosen position.</strong> A small compass indicates north, which helps the few who navigate by cardinal directions, but a visitor who simply wants to know “where do I go from here?” gets no answer from a compass.</span></div>
+      </div>
+      <p style="margin: 0;">The tour gave me, in negative, the brief for the kiosk: everything that doesn’t work there, is what the new interface needs to do well.</p>
+    </div>
+    <figure data-reveal="1" style="position: absolute; left: 82px; top: 624px; width: 604px; height: 431px; margin: 0; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 242px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-1.5deg);"></div>
+      <img src="./assets/virtualtour-floor.png" alt="UNIPD virtual tour, Psico 1, floor -1" style="height: 334px; align-self: stretch; border-radius: 4px; object-fit: cover;">
+      <figcaption style="display: flex; padding: 12px 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 100%; letter-spacing: 1px; color: rgb(75,85,99); text-transform: uppercase;">UNIPD virtual tour: psico 1, floor -1</figcaption>
+    </figure>
+  </section>
+
+  <section data-screen-label="T06 My interface" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 79px; top: 73px; width: 610px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <div style="align-self: stretch; display: flex; flex-direction: column; gap: 32px; align-items: center;">
+        <div style="width: 50px; height: 48px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; color: rgb(249,246,240);">04</span>
+        </div>
+        <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1; color: rgb(17,24,39);">My interface</h2>
+        <p style="margin: 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); text-align: center; text-wrap: pretty;">The kiosk works in three steps, and each one answers a failure of the virtual tour.</p>
+      </div>
+      <div data-steps="y" style="width: 510px; display: flex; flex-direction: column; align-items: center;">
+        <div data-step-card="1" style="align-self: stretch; box-sizing: border-box; border-radius: 12px; background: rgb(255,255,255); border: 4px solid rgb(156,163,175); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px;">
+          <div style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
+            <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; color: rgb(122,98,84);">ARRIVE</span>
+          </div>
+          <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 1.5; color: rgb(31,20,10); white-space: pre-line; text-wrap: pretty;">The screen shows a 2D bird's-eye view of the complex, with a “you are here” pin at the real entrance where the kiosk stands. A hint invites the visitor to search their destination.
+There will be one kiosk at each of the three possible entrances to the complex.</div>
+        </div>
+        <div style="width: 2px; height: 25px; margin: 3.5px 0; border-radius: 2px; overflow: hidden; background: rgb(156,163,175);"><div data-step-fill="1" style="width: 100%; height: 100%; background: rgb(241,136,30); transform: scaleY(0); transform-origin: center top;"></div></div>
+        <div data-step-card="2" style="align-self: stretch; box-sizing: border-box; border-radius: 12px; background: rgb(255,255,255); border: 4px solid rgb(156,163,175); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px;">
+          <div style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
+            <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; color: rgb(122,98,84);">SEARCH</span>
+          </div>
+          <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 1.5; color: rgb(31,20,10); text-wrap: pretty;">The visitor can search directly the room, lab, office or service that’s needed. There are no nested menus, and no need to already know where things are.</div>
+        </div>
+        <div style="width: 2px; height: 25px; margin: 3.5px 0; border-radius: 2px; overflow: hidden; background: rgb(156,163,175);"><div data-step-fill="2" style="width: 100%; height: 100%; background: rgb(249,196,143); transform: scaleY(0); transform-origin: center top;"></div></div>
+        <div data-step-card="3" style="align-self: stretch; box-sizing: border-box; border-radius: 12px; background: rgb(255,255,255); border: 4px solid rgb(156,163,175); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px;">
+          <div style="display: flex; justify-content: center; align-items: center; align-self: stretch;">
+            <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 600; font-size: 20px; line-height: 100%; color: rgb(122,98,84);">ROUTE</span>
+          </div>
+          <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 1.5; color: rgb(31,20,10); white-space: pre-line; text-wrap: pretty;">The screen shows the route for the searched destination step by step. Since the buildings have multiple floors, the map is segmented: one screen shows how to reach the right building, one how to reach the stairs and one the final path to your destination.
+At the end, a QR code lets you take the path with you, downloading the a static maps on your phone.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="T07 Design choices" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 34px; top: 200px; width: 700px; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: 32px; align-items: center;">
+        <div style="width: 50px; height: 48px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; color: rgb(249,246,240);">05</span>
+        </div>
+        <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; text-align: center; line-height: 1.1; color: rgb(17,24,39);">Design choices</h2>
+      </div>
+      <div style="width: 584px; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px; align-items: flex-start; position: relative;">
+        <div style="position: absolute; left: 232px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-1.5deg);"></div>
+        <h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 100%; color: rgb(31,20,10);">A segmented route</h3>
+        <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">One long path across five buildings and multiple floors is hard to hold in memory, but three short segments, each with one goal, are not.
+The segmentation also mirrors the logic of physical signage: first the building, the floor, then the room.</div>
+      </div>
+      <img src="./assets/segmented-route.png" alt="Three segmented route maps: complex, floor 0, floor -1" style="width: 700px; height: 326px; border-radius: 12px; object-fit: cover;">
+    </div>
+  </section>
+
+  <section data-screen-label="T07 Design choices, colour" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 92px; top: 90px; width: 584px; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <div style="align-self: stretch; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px; align-items: flex-start; position: relative;">
+        <div style="position: absolute; left: 232px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-1.5deg);"></div>
+        <h3 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 100%; color: rgb(31,20,10);">Color choice</h3>
+        <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">In the complex, buildings haven’t a single specific function: the library lives inside Psico2, offices and rooms for lessons are everywhere): for this reason, coloring by function wasn’t possible.
+For the kiosk, each of the five buildings has one stable color identity, so when you search a destination, the whole journey takes the color of the building in it.
+For each building, I selected three shades of the assigned color: a pastel shade for the resting state, a darker shade for the stroke of the building, and a vibrant one to highlight the path to follow and the room to reach.</div>
+      </div>
+      <img src="./assets/colors.png" alt="Colour palette: three shades for each of the five buildings" style="width: 463px; height: 600px; border-radius: 12px; object-fit: cover;">
+    </div>
+  </section>
+
+  <section data-screen-label="T08 Why a 2D" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 94px; top: 136px; width: 580px; box-sizing: border-box; border-radius: 4px; background: rgb(255,255,255); border: 1px solid rgba(44,27,14,0.1216); box-shadow: 0px 8px 16px 0px rgba(44,27,13,0.0196); display: flex; flex-direction: column; gap: 16px; padding: 32px; align-items: flex-start;">
+      <div style="position: absolute; left: 230px; top: -12px; width: 120px; height: 24px; opacity: 0.8; background: rgb(226,223,217); box-shadow: 0px 2px 4px 0px rgba(0,0,0,0.051); transform: rotate(-0.5deg);"></div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 28px; line-height: 100%; color: rgb(31,20,10);">Why a 2D?</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); white-space: pre-line; text-wrap: pretty;">Maps can be represented both in 2D with a bird eye-view, or in 3D. Both approaches ask different things of the user: 3D offers a realistic first-person view, while 2D works through symbolic conventions people have practiced on a lifetime of city plans and Google Maps.
+Representing the space with a 3D map, would’ve been reasonable: research on mobile indoor navigation has found real advantages for 3D views followed in real time while walking (Burigat et al., 2017).
+
+However, my kiosk follows a different model: you consult it before moving, memorize your path, and the signage accompanies you inside multi-levels buildings. For this “look-then-go” interaction, the evidence favors 2D: in multi-level buildings, top-down maps produced more accurate cross-floor understanding and were preferred by most users (Li &amp; Giudice, 2013).
+Moreover, a kiosk is fixed: it is the "you are here" point. So, the main strength of 3D (matching the screen map to the surrounding) is already solved.
+
+Finally, a 2D map is simpler and cheaper to build and maintain, which for a university is not a detail.</div>
+    </div>
+    <div style="position: absolute; left: 81px; top: 910px; width: 607px; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 16px; line-height: 1.35; color: rgb(0,0,0); display: flex; flex-direction: column; gap: 6px;">
+      <div style="display: flex; gap: 10px;"><span>•</span><span>Burigat, S., Chittaro, L., &amp; Sioni, R. (2017). Mobile three-dimensional maps for wayfinding in large and complex buildings: Empirical comparison of first-person versus third-person perspective.</span></div>
+      <div style="display: flex; gap: 10px;"><span>•</span><span>Li, H., &amp; Giudice, N. A. (2013, November). The effects of 2D and 3D maps on learning virtual multi-level indoor environments.</span></div>
+    </div>
+  </section>
+
+  <section data-screen-label="T09 The prototype" style="position: relative; height: 1200px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 80px; top: 22px; width: 608px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <div style="width: 50px; height: 48px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; color: rgb(249,246,240);">06</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; text-align: center; line-height: 1.1; color: rgb(17,24,39);">The prototype</h2>
+      <p style="margin: 0; align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); text-wrap: pretty;">Below, an interactive prototype of the kiosk, designed first in Figma, then built with Claude Design. The maps are redrawn from scratch, and kept deliberately minimal. For the scope of the prototype, only the route for Biblioteca Metelli, Laboratorio E08 and Aula T3 are available.</p>
+    </div>
+    <div style="position: absolute; left: 168px; top: 306px; width: 432px; height: 768px; overflow: hidden; background: rgb(241,136,30);">
+      <iframe src="{{ prototypeSrc }}" title="Interactive kiosk prototype for Studio Wanner wayfinding" loading="lazy" scrolling="no" style="width: 432px; height: 768px; border: none; display: block;"></iframe>
+    </div>
+    <a href="{{ prototypeSrc }}" target="_blank" rel="noopener" style="position: absolute; left: 0; top: 1096px; width: 768px; text-align: center; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 24px; line-height: 1.1; color: rgb(0,0,0); text-decoration: underline; transition: color 0.2s ease;" style-hover="color: rgb(241,136,30)">Apri prototipo a schermo intero</a>
+    <span style="position: absolute; left: 0; top: 1144px; width: 768px; text-align: center; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.1; color: rgb(0,0,0);">The maps present in the prototype contains <a href="https://www.streamlinehq.com" target="_blank" rel="noopener" style="color: rgb(0,0,0); text-decoration: underline; transition: color 0.2s ease;" style-hover="color: rgb(241,136,30)">Free icons from Streamline</a></span>
+  </section>
+
+  <section data-screen-label="T10 Limitations" style="position: relative; height: 900px; z-index: 1;">
+    <div data-reveal="1" style="position: absolute; left: 141px; top: 40px; width: 489px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
+      <div style="width: 50px; height: 48px; box-sizing: border-box; border-radius: 100px; background: rgb(241,136,30); border: 1px solid rgb(94,51,12); display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <span style="font-family: 'Archivo Narrow', sans-serif; font-weight: 700; font-size: 24px; line-height: 100%; color: rgb(249,246,240);">07</span>
+      </div>
+      <h2 style="margin: 0; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; text-align: center; line-height: 1.1; color: rgb(17,24,39);">Limitations</h2>
+      <div style="align-self: stretch; font-family: 'Crimson Text', Georgia, serif; font-weight: 400; font-size: 20px; line-height: 1.3; color: rgb(17,24,39); display: flex; flex-direction: column; gap: 16px; text-wrap: pretty;">
+        <p style="margin: 0;">This is a speculative project built without client input or access to institutional resources.</p>
+        <div style="display: flex; flex-direction: column; gap: 12px; padding-left: 12px;">
+          <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">Source material:</strong> no up-to-date floor plans were available. The maps were traced from two sources: the department's 3D virtual tour, viewed from above (which does not produce a true bird's-eye projection and is therefore slightly distorted), and emergency evacuation plans over five years old.</span></div>
+          <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">Scope and validation:</strong> the prototype covers four hard-coded routes. There is no routing engine or content backend, so the system's behaviour at full building scale remains untested. No usability testing was carried out, so the design decisions are only grounded in environmental psychology research and spatial reasoning.</span></div>
+          <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">Queuing issue:</strong> animated transitions and multi-step interactions slow down each session. During peak periods, like the start of semester or exam months, queuing is likely.</span></div>
+          <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">Accessibility:</strong> the current design is not optimised for blind and low-vision users.</span></div>
+          <div style="display: flex; gap: 12px;"><span>•</span><span><strong style="font-weight: 700;">Languages:</strong> only Italian and English are available at the moment. Adding further languages would require data on the actual composition of the international student population at the department, which was not available.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="T11 Contacts" style="position: relative; height: 1200px; z-index: 1;">
+    <h2 style="position: absolute; left: 0; top: 188px; width: 768px; margin: 0; text-align: center; font-family: 'Young Serif', Georgia, serif; font-weight: 400; font-size: 36px; line-height: 1.1; color: rgb(17,24,39);">Contacts</h2>
+    <div data-reveal="1" style="position: absolute; left: 64px; top: 299px; width: 639px; display: flex; flex-direction: column; gap: 40px; align-items: center;">
+      <div style="display: flex; flex-direction: row; gap: 80px; align-items: center; align-self: stretch;">
+        <div style="width: 279.5px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <img data-bob="1" src="./assets/telefon.png" alt="" style="height: 213px; align-self: stretch; object-fit: contain;">
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+            <span style="font-family: 'Inria Sans', sans-serif; font-weight: 700; font-size: 18px; text-align: center; line-height: 100%; color: rgb(0,0,0);">PHONE</span>
+            <a href="tel:+41782628980" style="font-family: 'Inria Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 100%; color: rgb(0,0,0); text-decoration: none; white-space: nowrap;">+41 78 262 89 80</a>
+          </div>
+        </div>
+        <div style="width: 279.5px; display: flex; flex-direction: column; gap: 16px; align-items: center;">
+          <img data-bob="1" src="./assets/email.png" alt="" style="height: 213px; align-self: stretch; object-fit: contain;">
+          <div style="display: flex; flex-direction: column; gap: 8px; align-items: center;">
+            <span style="font-family: 'Inria Sans', sans-serif; font-weight: 700; font-size: 18px; text-align: center; line-height: 100%; color: rgb(0,0,0);">E-MAIL</span>
+            <a href="mailto:reb.guerrini@gmail.com" style="font-family: 'Inria Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 100%; color: rgb(0,0,0); text-decoration: none;">reb.guerrini@gmail.com</a>
+          </div>
+        </div>
+      </div>
+      <div style="width: 279.5px; display: flex; flex-direction: column; gap: 16px; align-items: flex-start;">
+        <img data-bob="1" src="./assets/portfolio.png" alt="" style="height: 213px; align-self: stretch; object-fit: contain;">
+        <div style="display: flex; flex-direction: column; gap: 8px; align-items: center; align-self: stretch;">
+          <span style="font-family: 'Inria Sans', sans-serif; font-weight: 700; font-size: 18px; text-align: center; line-height: 100%; color: rgb(0,0,0);">DESIGN PORTFOLIO</span>
+          <a href="https://becks-66.github.io/portfolio/" target="_blank" rel="noopener" style="font-family: 'Inria Sans', sans-serif; font-weight: 400; font-size: 18px; line-height: 100%; color: rgb(0,0,0); text-decoration: none;">https://becks-66.github.io/portfolio/</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;prototypeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://becks-66.github.io/kiosk/&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Prototype&quot;},&quot;introAnimation&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;revealOnScroll&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;},&quot;drawPaths&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Motion&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const src = (this.props.prototypeUrl || "").trim() || "https://becks-66.github.io/kiosk/";
+    return { prototypeSrc: src };
+  }
+
+  componentDidMount() {
+    this._onZoom = () => {
+      const tab = document.querySelector("[data-tab]");
+      if (!tab) return;
+      const w = window.innerWidth;
+      tab.style.zoom = w < 768 ? String(w / 768) : "";
+    };
+    this._onZoom();
+    window.addEventListener("resize", this._onZoom);
+    this.setupConnectors();
+    this.setupSteps();
+    this.setupReveal();
+    this.setupDraw();
+    this.setupAnchors();
+    this.setupIntro();
+  }
+
+  setupIntro() {
+    const hero = Array.from(document.querySelectorAll("[data-intro]"));
+    const line = document.querySelector("[data-intro-draw]");
+    const bobs = Array.from(document.querySelectorAll("[data-bob]"));
+    const reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (line) line.style.clipPath = "inset(0 0 100% 0)";
+
+    const startAmbient = () => {
+      if (line) {
+        line.style.transition = "clip-path 1.8s cubic-bezier(0.4,0,0.3,1)";
+        line.style.clipPath = "inset(0 0 0% 0)";
+      }
+      bobs.forEach((el, i) => {
+        const b = el.getAttribute("data-bob");
+        const name = b === "bulb" ? "om-bob-bulb" : b === "bulb-t" ? "om-bob-bulb-t" : "om-bob";
+        el.style.animation = name + " " + (3.4 + i * 0.6).toFixed(1) + "s ease-in-out infinite";
+      });
+    };
+
+    if (reduce || this.props.introAnimation === false) {
+      hero.forEach((el) => { el.style.opacity = "1"; el.style.filter = "none"; });
+      if (line) line.style.clipPath = "inset(0 0 0% 0)";
+      return;
+    }
+
+    hero.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.filter = "blur(7px)";
+      const d = (0.18 * i).toFixed(2) + "s";
+      el.style.transition = "opacity 2.1s ease-out " + d + ", filter 2.1s ease-out " + d;
+    });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      hero.forEach((el) => { el.style.opacity = "1"; el.style.filter = "blur(0px)"; });
+    }));
+    this._introTimer = setTimeout(() => {
+      hero.forEach((el) => { el.style.transition = ""; el.style.filter = ""; });
+      startAmbient();
+    }, 2600);
+  }
+
+  componentWillUnmount() {
+    if (this._introTimer) clearTimeout(this._introTimer);
+    if (this._onZoom) window.removeEventListener("resize", this._onZoom);
+    if (this._placeConns) window.removeEventListener("resize", this._placeConns);
+    if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
+    if (this._io) this._io.disconnect();
+    if (this._stepIo) this._stepIo.disconnect();
+    if (this._stepTimers) this._stepTimers.forEach(clearTimeout);
+  }
+
+  setupAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((a) => {
+      a.addEventListener("click", (e) => {
+        const t = document.getElementById(a.getAttribute("href").slice(1));
+        if (!t) return;
+        e.preventDefault();
+        window.scrollTo({ top: t.getBoundingClientRect().top + window.scrollY - 40, behavior: "smooth" });
+      });
+    });
+  }
+
+  setupSteps() {
+    const groups = Array.from(document.querySelectorAll("[data-steps]"));
+    if (!groups.length || !("IntersectionObserver" in window)) return;
+    const cardColors = ["rgb(241,136,30)", "rgb(251,180,109)", "rgb(249,215,143)"];
+    const dur = { card: 700, link: 550 };
+    this._stepTimers = this._stepTimers || [];
+
+    const play = (group) => {
+      const dir = group.getAttribute("data-steps") === "y" ? "scaleY" : "scaleX";
+      const cards = Array.from(group.querySelectorAll("[data-step-card]"));
+      const fills = Array.from(group.querySelectorAll("[data-step-fill]"));
+      const seq = [];
+      cards.forEach((el, i) => {
+        seq.push(() => {
+          el.style.transition = "border-color " + dur.card + "ms ease-in-out";
+          el.style.borderColor = cardColors[i] || cardColors[cardColors.length - 1];
+        });
+        if (fills[i]) seq.push(() => {
+          fills[i].style.transition = "transform " + dur.link + "ms linear";
+          fills[i].style.transform = dir + "(1)";
+        });
+      });
+      let t = 120;
+      seq.forEach((fn, i) => {
+        this._stepTimers.push(setTimeout(fn, t));
+        t += i % 2 === 0 ? dur.card - 120 : dur.link - 60;
+      });
+    };
+
+    this._stepIo = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        this._stepIo.unobserve(en.target);
+        play(en.target);
+      });
+    }, { threshold: 0.2 });
+    groups.forEach((g) => this._stepIo.observe(g));
+  }
+
+  setupConnectors() {
+    const canvas = document.querySelector("[data-tab]");
+    if (!canvas) return;
+    const conns = Array.from(canvas.querySelectorAll("[data-conn]"));
+    if (!conns.length) return;
+
+    const place = () => {
+      if (!canvas.offsetWidth) return;
+      const cRect = canvas.getBoundingClientRect();
+      const k = cRect.width / canvas.offsetWidth || 1;
+      const blocks = [];
+      canvas.querySelectorAll("section > *").forEach((el) => {
+        const r = el.getBoundingClientRect();
+        if (!r.height) return;
+        const top = (r.top - cRect.top) / k;
+        blocks.push([top, top + r.height / k]);
+      });
+      blocks.sort((a, b) => a[0] - b[0]);
+      const merged = [];
+      blocks.forEach((b) => {
+        const last = merged[merged.length - 1];
+        if (last && b[0] <= last[1] + 2) last[1] = Math.max(last[1], b[1]);
+        else merged.push([b[0], b[1]]);
+      });
+
+      const pad = 16, minLen = 34;
+      conns.forEach((svg) => {
+        const nat = parseFloat(svg.getAttribute("data-conn")) || 185;
+        let c = parseFloat(svg.getAttribute("data-conn-center"));
+        for (let i = 0; i < merged.length; i++) {
+          if (c > merged[i][0] && c < merged[i][1]) { c = merged[i][1]; i = -1; }
+        }
+        let lo = 0, hi = canvas.offsetHeight;
+        merged.forEach((m) => {
+          if (m[1] <= c) lo = Math.max(lo, m[1]);
+          if (m[0] >= c) hi = Math.min(hi, m[0]);
+        });
+        lo += pad; hi -= pad;
+        const room = hi - lo;
+        if (room < minLen) { svg.style.display = "none"; return; }
+        svg.style.removeProperty("display");
+        const h = Math.min(nat, room);
+        svg.style.top = Math.round(lo + (room - h) / 2) + "px";
+        svg.style.height = Math.round(h) + "px";
+      });
+      if (this._onScroll) this._onScroll();
+    };
+
+    this._placeConns = place;
+    place();
+    window.addEventListener("resize", place);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+    setTimeout(place, 400);
+    setTimeout(place, 1200);
+  }
+
+  setupReveal() {
+    const els = Array.from(document.querySelectorAll("[data-reveal]"));
+    if (this.props.revealOnScroll === false || !("IntersectionObserver" in window)) return;
+    els.forEach((el) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(24px)";
+      el.style.transition = "opacity 0.7s ease, transform 0.7s cubic-bezier(0.22,1,0.36,1)";
+    });
+    this._io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        en.target.style.opacity = "1";
+        en.target.style.transform = "none";
+        this._io.unobserve(en.target);
+      });
+    }, { rootMargin: "0px 0px -12% 0px", threshold: 0.05 });
+    els.forEach((el) => this._io.observe(el));
+  }
+
+  setupDraw() {
+    const paths = Array.from(document.querySelectorAll("[data-draw]"));
+    if (!paths.length) return;
+    if (this.props.drawPaths === false) return;
+    paths.forEach((p) => {
+      const len = p.getTotalLength ? p.getTotalLength() : 0;
+      p.__len = len;
+      const dash = p.getAttribute("stroke-dasharray");
+      if (dash) p.style.strokeDasharray = dash;
+      p.style.clipPath = "inset(0 0 100% 0)";
+      p.style.willChange = "clip-path";
+    });
+    let raf = null;
+    const update = () => {
+      raf = null;
+      const vh = window.innerHeight;
+      paths.forEach((p) => {
+        const box = p.ownerSVGElement || p;
+        const r = box.getBoundingClientRect();
+        const span = r.height + vh * 0.35;
+        let t = (vh * 0.92 - r.top) / span;
+        t = t < 0 ? 0 : t > 1 ? 1 : t;
+        p.style.clipPath = "inset(0 0 " + ((1 - t) * 100).toFixed(2) + "% 0)";
+      });
+    };
+    this._onScroll = () => { if (!raf) raf = requestAnimationFrame(update); };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    window.addEventListener("resize", this._onScroll, { passive: true });
+    update();
+  }
+}
+</script>
+</body>
+</html>
